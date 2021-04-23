@@ -7,9 +7,7 @@ import {
   faPause,
 } from "@fortawesome/free-solid-svg-icons";
 
-const Player = ({ currentSong, isPlaying, setIsPlaying }) => {
-  //ref
-  const audioRef = useRef(null);
+const Player = ({ currentSong, isPlaying, setIsPlaying, audioRef }) => {
   //event handlers
   const playSongHandler = () => {
     if (isPlaying) {

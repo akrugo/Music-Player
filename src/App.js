@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 //assging styles
 import "./styles/app.scss";
 //adding componenets
@@ -9,6 +9,8 @@ import Library from "./components/Library";
 import data from "./util";
 
 function App() {
+  //ref
+  const audioRef = useRef(null);
   //state
   const [songs, setSongs] = useState(data());
   const [currentSong, setCurrentSong] = useState(songs[8]);
@@ -20,8 +22,15 @@ function App() {
         currentSong={currentSong}
         isPlaying={isPlaying}
         setIsPlaying={setIsPlaying}
+        audioRef={audioRef}
       />
-      <Library songs={songs} />
+      <Library
+        songs={songs}
+        setCurrentSong={setCurrentSong}
+        audioRef={audioRef}
+        isPlaying={isPlaying}
+        setSongs={setSongs}
+      />
     </div>
   );
 }
