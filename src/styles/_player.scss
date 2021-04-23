@@ -4,12 +4,9 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  background: cornflowerblue;
 }
 .time-control {
-  background: cyan;
   display: flex;
-  //padding: 1rem 2rem;
   width: 50%;
   input {
     width: 100%;
@@ -30,6 +27,11 @@
   }
 }
 
-.selected {
-  background: violet;
+@media screen and (max-width: 768px) {
+  .time-control {
+    width: 90%;
+  }
+  .play-control {
+    width: 50%;
+  }
 }
